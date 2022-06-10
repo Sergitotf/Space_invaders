@@ -8,14 +8,19 @@ public class ShipController : MonoBehaviour
     public float speed;
     public float heat;
     float nextShoot;
+    public int disparo;
 
     public Spaceshipdata data;
     public GameObject projectilPrefab;
     Vector3 lookDirection = new Vector3(0, 1, 0);
     [SerializeField]
     Quaternion rotation;
+    public static ShipController instance;
 
-
+    private void Start()
+    {
+       
+    }
     //carga la escena y la nave, junto con sus caracteristicas
     void Awake()
     {
@@ -38,6 +43,7 @@ public class ShipController : MonoBehaviour
             transform.position = position;
         }
         //asignamos la tecla para el disparo
+
         if (nextShoot <= Time.time)
         {
             if(Input.GetKeyDown(KeyCode.W))
@@ -60,6 +66,7 @@ public class ShipController : MonoBehaviour
 
         Projectil projectil = projectilObject.GetComponent<Projectil>();
         projectil.Launch(lookDirection, 5000);
+        disparo++;
     }
 
     void Launch2()

@@ -81,7 +81,7 @@ public class SpaceShipScreen : MonoBehaviour
         }
         ModeloNave[shipActive].SetActive(true);
           GameDataPersistent.instance.selectedSpaceship = infoSpaceShip[shipActive];
-       // Debug.Log(infoSpaceShip[shipActive]);
+       
     }
 
     public void SelectfirstShip()

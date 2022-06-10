@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Limite_movimiento : MonoBehaviour
 {
+
+    
     public int[] posicionEsteAlien = { 0, 0 };
     public void Start()
     {
@@ -29,4 +31,6 @@ public class Limite_movimiento : MonoBehaviour
             EnemyController.instance.spaceToTheR = !EnemyController.instance.spaceToTheR;
         }
     }
+
+
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class EnemyController : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class EnemyController : MonoBehaviour
     public float movingTimer;
     public float movingTime = 2;
     float speed = 4;
+
+    public int contadorDisparoAlien;
+    public int contadorAciertoAlien;
+    public TextMeshProUGUI porcentajeAciertoAlien;
 
     public static EnemyController instance;
 
@@ -98,7 +103,9 @@ public class EnemyController : MonoBehaviour
         }
         #endregion
         movingTimer -= Time.deltaTime; //Temporizador para el movimiento
+
         //Comprueba si hay espacio hacia la derecha y se mueve en esa dirección -9.7 a 3.7 = 12 en x
+
         if (spaceToTheR == true)
         {
             if (movingTimer <= 0)
@@ -128,7 +135,7 @@ public class EnemyController : MonoBehaviour
 
         int colum = UnityEngine.Random.Range(0, enemiesLists.Length);
 
-        //Debug.Log("Se ha escogido la columna " + colum);
+        
 
         int lastActiveAlien = 0;
         bool hayAliens = true;
@@ -158,7 +165,7 @@ public class EnemyController : MonoBehaviour
                 GameObject shooter = enemiesLists[colum].enemies[lastActiveAlien];
                 GameObject projectileObject = Instantiate(projectilePrefab, shooter.transform.position + Vector3.down, Quaternion.Euler(0, 0, 0));
                 Projectil projectile = projectileObject.GetComponent<Projectil>();
-               
+                contadorDisparoAlien++;
             }
                       
         }

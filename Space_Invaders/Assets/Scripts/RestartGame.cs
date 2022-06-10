@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class RestartGame : MonoBehaviour
 {
+    
     
     //asignamos el reseteo de la partida al boton
     public void ResetGame()
@@ -18,4 +20,6 @@ public class RestartGame : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetSceneAt(0).buildIndex);
 
     }
+
+   
 }
